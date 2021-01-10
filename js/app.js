@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var seattel = {
     cityName: 'seattel',
@@ -176,7 +176,7 @@ function getRandomIntInclusive(min, max) {
 
 var headPage =document.getElementById('header');
 var headImg= document.createElement('img');
-headPage.appendChild(headImg);''
+headPage.appendChild(headImg);
 headImg.src='https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png'
 
 
@@ -191,21 +191,22 @@ function writrList(name) {
     Atricle.appendChild(Name);
     var cum=0;
     // unorderd list
-
-    for(var k=0;k<time.length;k++){
-        cum=cum+name.allCookiesPerHour[k]
     var List = document.createElement('ul');
     Atricle.appendChild(List);
+    for(var k=0;k<time.length;k++){
+        cum=cum+name.allCookiesPerHour[k];
+    
+    
     // branch of list
     var Branch = document.createElement('li');
-    Branch.textContent = time[k] + ':' + name.allCookiesPerHour[k];
+    Branch.textContent = time[k] + ': ' + name.allCookiesPerHour[k]+' cookies';
     List.appendChild(Branch);
     
     }
     //add total
    
     var Branch = document.createElement('li');
-    Branch.textContent ='Total: '+ cum;
+    Branch.textContent ='Total: '+ cum +' cookies';
     List.appendChild(Branch); 
 }
 
