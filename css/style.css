@@ -1,0 +1,12 @@
+table{
+    text-align: center ;
+   background-color: sandybrown;
+border-collapse: collapse ;}
+
+
+ td,th {
+    padding: 15px;
+   
+    border:1px solid  rgba(255, 102, 0, 0.829);
+  }
+  
