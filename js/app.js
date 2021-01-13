@@ -128,15 +128,21 @@ console.log(totalArr, 'totalArr');
 footerRoW();
 // add footer to table
 function footerRoW() {
+    
+    
+
     var footerOfTable = document.createElement('tr');
+    
     parentTable.appendChild(footerOfTable);
     var CookeisPerHr = document.createElement('th');
+    CookeisPerHr.setAttribute("id", "total");
     CookeisPerHr.textContent = 'Total';
     footerOfTable.appendChild(CookeisPerHr)
     for (var j = 0; j < time.length; j++) {
 
         var CookeisPerHr = document.createElement('th');
         CookeisPerHr.textContent = totalArr[j];
+        CookeisPerHr.setAttribute("id", "total");
         footerOfTable.appendChild(CookeisPerHr);
     }
     var totalDaily = 0;
@@ -145,18 +151,13 @@ function footerRoW() {
     }
     var CookeisPerHr = document.createElement('th');
     CookeisPerHr.textContent = totalDaily;
+    CookeisPerHr.setAttribute("id", "total");
     footerOfTable.appendChild(CookeisPerHr);
 };
 
 
 
 
-// rendering
-
-var headPage = document.getElementById('header');
-var headImg = document.createElement('img');
-headPage.appendChild(headImg);
-headImg.src = 'https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png'
 
 
 

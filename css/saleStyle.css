@@ -1,0 +1,65 @@
+table{
+    text-align: center ;
+   
+border-collapse: collapse ;}
+
+#location{
+    position: relative;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+td {
+    padding: 15px;
+    background-color: sandybrown;
+    border:1px solid  rgba(255, 102, 0, 0.829);
+  }
+  #total {
+    padding: 15px;
+    background-color: rgb(97, 35, 11);
+    color: rgba(255, 102, 0, 0.829);
+    border:1px solid  rgba(255, 102, 0, 0.829);
+  }
+body{
+    background-color: rgb(230, 198, 175);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(97, 35, 11);
+ }
+ 
+    
+  
+  
+header{
+    position: relative;
+    height: 150px;
+    background-color: sandybrown;
+    margin: 0px;
+    padding: 0%;
+   
+}
+ header img{
+     float: left;
+     width: 300px;
+height:100px ;
+position: relative;
+margin: 25px;
+    }
+
+    ul{
+      
+    position: absolute;
+    
+    display: inline;
+  margin-top: 75px ;
+  margin-left: 100px;
+    }
+    
+    li{
+        position: relative;
+        padding: 0px;
+        border: 0px;
+        margin-left:180px ;
+        display: inline;
+    }
