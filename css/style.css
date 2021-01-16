@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
 body{
    background-color: rgb(230, 198, 175);
 }
 
-
- 
+h2{
+   font-family: 'Yusei Magic';
+   color: brown;
+}
+ h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: rgb(201, 106, 106);}
+ li{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: crimson;
+ }
 header{
    position: relative;
    height: 150px;
