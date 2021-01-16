@@ -75,14 +75,14 @@ Location.prototype.render = function () {
     var DailyLocationTotal = 0;
 
     for (var j = 0; j < time.length; j++) {
-        var cityInfo = document.createElement('td');
+        cityInfo = document.createElement('td');
         cityInfo.textContent = this.allCookiesPerHour[j];
         cityRow.appendChild(cityInfo);
         DailyLocationTotal = DailyLocationTotal + this.allCookiesPerHour[j];
 
         totalArr[j] = totalArr[j] + this.allCookiesPerHour[j]
     }
-    var cityInfo = document.createElement('td');
+    cityInfo = document.createElement('td');
     cityInfo.textContent = DailyLocationTotal;
     cityRow.appendChild(cityInfo);
 
@@ -124,15 +124,40 @@ Lima.calcCookiesPerHour();
 Lima.render();
 console.log(Lima);
 console.log(totalArr, 'totalArr');
+// add location from form:
+
+var Newlocation = document.getElementById('LocationForm');
+Newlocation.addEventListener('submit', NewBranch);
+function NewBranch(event) {
+    event.preventDefault();
+    var cityName = event.target.NewBranch.value;
+
+    var minCustPerHour =Number (event.target.minimumPerHour.value);
+
+    var maxCustPerHour =Number (event.target.maximumPerHour.value);
+
+    var avgCookiePerHour =Number (event.target.AvgPerHour.value);
+var AddedLocation = new Location(cityName, minCustPerHour, maxCustPerHour, avgCookiePerHour);
+
+
+AddedLocation.calcCustPerHour();
+AddedLocation.calcCookiesPerHour();
+AddedLocation.render();
+var d=document.getElementById("t");
+d.innerHTML='';
 
 footerRoW();
+};
+
+footerRoW();
+
 // add footer to table
 function footerRoW() {
-    
-    
+
+
 
     var footerOfTable = document.createElement('tr');
-    
+    footerOfTable.setAttribute("id", "t");
     parentTable.appendChild(footerOfTable);
     var CookeisPerHr = document.createElement('th');
     CookeisPerHr.setAttribute("id", "total");
@@ -149,7 +174,7 @@ function footerRoW() {
     for (var j = 0; j < time.length; j++) {
         totalDaily = totalDaily + totalArr[j];
     }
-    var CookeisPerHr = document.createElement('th');
+    CookeisPerHr = document.createElement('th');
     CookeisPerHr.textContent = totalDaily;
     CookeisPerHr.setAttribute("id", "total");
     footerOfTable.appendChild(CookeisPerHr);
