@@ -1,6 +1,6 @@
 'use strict';
 
-
+var footerOfTable;
 var city = [seattel, Tokyo, Dubai, Paris, Lima];
 var time = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 function getRandomIntInclusive(min, max) {
@@ -124,6 +124,8 @@ Lima.calcCookiesPerHour();
 Lima.render();
 console.log(Lima);
 console.log(totalArr, 'totalArr');
+footerRoW();
+
 // add location from form:
 
 var Newlocation = document.getElementById('LocationForm');
@@ -132,32 +134,31 @@ function NewBranch(event) {
     event.preventDefault();
     var cityName = event.target.NewBranch.value;
 
-    var minCustPerHour =Number (event.target.minimumPerHour.value);
+    var minCustPerHour =event.target.minimumPerHour.value;
 
-    var maxCustPerHour =Number (event.target.maximumPerHour.value);
+    var maxCustPerHour =event.target.maximumPerHour.value;
 
-    var avgCookiePerHour =Number (event.target.AvgPerHour.value);
+    var avgCookiePerHour =event.target.AvgPerHour.value;
 var AddedLocation = new Location(cityName, minCustPerHour, maxCustPerHour, avgCookiePerHour);
-
+footerOfTable.innerHTML='';
 
 AddedLocation.calcCustPerHour();
 AddedLocation.calcCookiesPerHour();
 AddedLocation.render();
-var d=document.getElementById("t");
-d.innerHTML='';
+
 
 footerRoW();
 };
 
-footerRoW();
 
 // add footer to table
+
 function footerRoW() {
 
 
 
-    var footerOfTable = document.createElement('tr');
-    footerOfTable.setAttribute("id", "t");
+   footerOfTable = document.createElement('tr');
+    
     parentTable.appendChild(footerOfTable);
     var CookeisPerHr = document.createElement('th');
     CookeisPerHr.setAttribute("id", "total");
